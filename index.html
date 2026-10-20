@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Bavel - Rencontres & Célibataires</title>
+    
+    <!-- PWA Manifest & Theme -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Bavel" />
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" href="/pwa-icon.png" />
+    <link rel="apple-touch-icon" href="/pwa-icon.png" />
+    
+    <meta name="description" content="Site premium de rencontre pour célibataires. Rencontrez l'amour et faites de belles rencontres !" />
+    <!-- Open Graph for sharing -->
+    <meta property="og:title" content="Bavel - Rencontres & Célibataires" />
+    <meta property="og:description" content="Site premium de rencontre pour célibataires. Rencontrez l'amour et faites de belles rencontres !" />
+    <meta property="og:image" content="/pwa-icon.png" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@1,600&display=swap&subset=latin,latin-ext" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Google Interactive Media Ads (IMA SDK HTML5) & Google Publisher Tag for Rewarded Ads -->
+    <script async src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <style>
+      html, body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+        color: #0f172a;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", 'Plus Jakarta Sans', system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+        overscroll-behavior-y: none;
+        -webkit-overflow-scrolling: touch;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+    </style>
+    <script>
+      // Protection immédiate contre le localStorage corrompu ([object Object])
+      try {
+        ['app_user', 'bavel_user_profile', 'bavel_user_photos'].forEach(function(k) {
+          var item = localStorage.getItem(k);
+          if (item === '[object Object]' || item === 'undefined') {
+            localStorage.removeItem(k);
+          }
+        });
+      } catch (e) {}
+    </script>
+  </head>
+  <body class="bg-[#0b0507] text-[#f9dcdc] select-none antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- PWA integration handled by VitePWA plugin -->
+  </body>
+</html>
+

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bavel - Mode hors ligne</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #0f172a;
+        color: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      .card {
+        max-width: 360px;
+        background: rgba(30, 41, 59, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 32px 24px;
+        backdrop-filter: blur(12px);
+      }
+      .icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0 0 8px 0;
+      }
+      p {
+        font-size: 14px;
+        color: #94a3b8;
+        line-height: 1.5;
+        margin: 0 0 24px 0;
+      }
+      button {
+        background: #e11d48;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 14px;
+        transition: transform 0.1s;
+      }
+      button:active {
+        transform: scale(0.96);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="icon">📡</div>
+      <h1>Vous êtes hors ligne</h1>
+      <p>Vérifiez votre connexion internet pour continuer à échanger sur Bavel.</p>
+      <button onclick="window.location.reload()">Réessayer</button>
+    </div>
+  </body>
+</html>

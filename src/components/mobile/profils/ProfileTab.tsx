@@ -475,10 +475,10 @@ export function ProfileTab({
   }, [setUserPhotos]);
 
   return (
-    <div className="relative h-full flex flex-col bg-gradient-to-b from-[#16042c] via-[#1f093a] to-[#0d021a] text-white overflow-y-auto overflow-x-hidden pb-36 no-scrollbar selection:bg-[#f43f5e] selection:text-white">
-      {/* Ambient Atmospheric Glows uniformes avec le Splash Screen */}
-      <div className="absolute -top-24 -left-24 w-80 h-80 bg-purple-600/30 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-rose-600/25 rounded-full blur-[100px] pointer-events-none" />
+    <div className="relative h-full flex flex-col bg-[#f8fafc] text-slate-900 overflow-y-auto overflow-x-hidden pb-36 no-scrollbar selection:bg-[#f43f5e] selection:text-white">
+      {/* Ambient Atmospheric Glows */}
+      <div className="absolute -top-24 -left-24 w-80 h-80 bg-purple-100/40 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-rose-100/30 rounded-full blur-[100px] pointer-events-none" />
       <input 
         type="file" 
         ref={galleryInputRef} 
@@ -782,14 +782,14 @@ export function ProfileTab({
       {showActivityMenu && <ActivityMenu onClose={() => setShowActivityMenu(false)} />}
       
       {/* Screen Top Sticky Header */}
-      <div className="flex justify-between items-center w-full px-4 sm:px-5 py-3 sticky top-0 z-40 bg-[#16042c]/95 backdrop-blur-md border-b border-purple-500/20 select-none">
-        <h1 className="text-[21px] sm:text-[23px] font-extrabold text-white tracking-tight leading-none whitespace-nowrap">Profil</h1>
-        <div className="flex items-center gap-1.5 sm:gap-2 text-white">
+      <div className="flex justify-between items-center w-full px-4 sm:px-5 py-3 sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 select-none">
+        <h1 className="text-[21px] sm:text-[23px] font-extrabold text-slate-900 tracking-tight leading-none whitespace-nowrap">Profil</h1>
+        <div className="flex items-center gap-1.5 sm:gap-2 text-slate-700">
           <motion.button 
             whileTap={{ scale: 0.92 }}
             onClick={() => setShowSettings(true)} 
             aria-label="Réglages" 
-            className="w-9 h-9 rounded-full bg-[#240c44]/70 border border-purple-500/25 flex items-center justify-center text-purple-200 hover:text-white hover:bg-[#32115c]/80 transition-all cursor-pointer shadow-sm" 
+            className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-slate-900 transition-all cursor-pointer shadow-xs" 
             type="button"
           >
             <Settings className="w-4.5 h-4.5" />
@@ -798,7 +798,7 @@ export function ProfileTab({
             whileTap={{ scale: 0.92 }}
             onClick={() => setShowHelpCenter(true)} 
             aria-label="Aide" 
-            className="w-9 h-9 rounded-full bg-[#240c44]/70 border border-purple-500/25 flex items-center justify-center text-purple-200 hover:text-white hover:bg-[#32115c]/80 transition-all cursor-pointer shadow-sm" 
+            className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-slate-900 transition-all cursor-pointer shadow-xs" 
             type="button"
           >
             <HelpCircle className="w-4.5 h-4.5" />
@@ -807,7 +807,7 @@ export function ProfileTab({
             whileTap={{ scale: 0.92 }}
             onClick={() => { setEditProfileInitialSubEditor('none'); setShowEditProfile(true); }} 
             aria-label="Modifier profil" 
-            className="w-9 h-9 rounded-full bg-[#240c44]/70 border border-purple-500/25 flex items-center justify-center text-purple-200 hover:text-white hover:bg-[#32115c]/80 transition-all cursor-pointer shadow-sm" 
+            className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-slate-900 transition-all cursor-pointer shadow-xs" 
             type="button"
           >
             <Pencil className="w-4.5 h-4.5" />
@@ -817,13 +817,13 @@ export function ProfileTab({
 
       {/* Profil Utilisateur */}
       <section className="px-4 sm:px-5 pt-3 pb-2 select-none">
-        <div className="p-3.5 sm:p-4 rounded-2xl bg-[#240c44]/75 border border-purple-500/25 backdrop-blur-md flex items-center gap-3.5 sm:gap-4 shadow-xl shadow-purple-950/40">
+        <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/80 backdrop-blur-md flex items-center gap-3.5 sm:gap-4 shadow-sm">
           <div 
             onClick={() => setShowFullPhoto(true)}
             className="relative flex-shrink-0 cursor-pointer active:scale-95 transition-transform"
           >
-            <div className="w-[80px] h-[80px] sm:w-[84px] sm:h-[84px] rounded-full p-[3px] border-2 border-purple-400/40 relative flex items-center justify-center shadow-lg">
-              <div className="w-full h-full rounded-full overflow-hidden shadow-inner bg-[#1f093a] ring-1 ring-white/10">
+            <div className="w-[80px] h-[80px] sm:w-[84px] sm:h-[84px] rounded-full p-[3px] border-2 border-rose-300 relative flex items-center justify-center shadow-sm">
+              <div className="w-full h-full rounded-full overflow-hidden shadow-inner bg-slate-100 ring-1 ring-slate-200">
                 <img 
                   alt={`Photo de profil de ${userProfile?.name || 'Severin'}`} 
                   className="w-full h-full object-cover object-top scale-110" 
@@ -838,7 +838,7 @@ export function ProfileTab({
                 setShowEditProfile(true);
               }}
               title="Compléter le profil"
-              className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#2dd4bf] to-[#f43f5e] text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full border border-white/30 shadow-md flex items-center justify-center whitespace-nowrap active:scale-95 transition-transform"
+              className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#2dd4bf] to-[#f43f5e] text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full border border-white/60 shadow-md flex items-center justify-center whitespace-nowrap active:scale-95 transition-transform"
             >
               {animatedPercentage} %
             </div>
@@ -846,7 +846,7 @@ export function ProfileTab({
 
           <div className="flex flex-col gap-1.5 sm:gap-2 min-w-0">
             <div className="flex items-center gap-2">
-              <h2 className="text-[20px] sm:text-[22px] font-extrabold text-white tracking-tight leading-none truncate">
+              <h2 className="text-[20px] sm:text-[22px] font-extrabold text-slate-900 tracking-tight leading-none truncate">
                 {userProfile?.name || 'Severin'}, {userProfile?.age || 18}
               </h2>
               <span className="w-2 h-2 rounded-full bg-[#2dd4bf] shrink-0" title="En ligne"></span>
@@ -864,16 +864,16 @@ export function ProfileTab({
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowLookingForMenu(true)}
               type="button"
-              className="inline-flex items-center gap-1.5 bg-[#18052e]/80 text-purple-200 hover:text-white px-3 py-1.5 rounded-full w-fit border border-purple-500/30 backdrop-blur-md transition-all cursor-pointer text-left"
+              className="inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-full w-fit border border-slate-200 transition-all cursor-pointer text-left shadow-xs"
             >
               {userLookingFor === 'serieuse' ? (
                 <Heart className="w-3.5 h-3.5 text-[#f43f5e] fill-[#f43f5e]" />
               ) : userLookingFor === 'discuter' ? (
-                <MessageCircle className="w-3.5 h-3.5 text-pink-300" />
+                <MessageCircle className="w-3.5 h-3.5 text-pink-500" />
               ) : (
-                <Coffee className="w-3.5 h-3.5 text-amber-300" />
+                <Coffee className="w-3.5 h-3.5 text-amber-500" />
               )}
-              <span className="font-semibold text-[12px] sm:text-[12.5px] text-purple-100 tracking-normal truncate">
+              <span className="font-semibold text-[12px] sm:text-[12.5px] text-slate-700 tracking-normal truncate">
                 {userLookingFor === 'serieuse' ? 'Une histoire sérieuse' : userLookingFor === 'discuter' ? 'Discuter' : 'Des rencontres'}
               </span>
             </motion.button>
@@ -886,30 +886,30 @@ export function ProfileTab({
         id="notif-banner" 
         whileTap={{ scale: 0.98 }}
         onClick={() => setShowPermissionDialog(true)}
-        className="mx-4 sm:mx-5 my-2.5 bg-[#240c44]/80 hover:bg-[#2d0f54]/90 border border-purple-500/25 rounded-2xl p-3 flex items-center justify-between shadow-lg shadow-purple-950/40 backdrop-blur-md cursor-pointer transition-all select-none"
+        className="mx-4 sm:mx-5 my-2.5 bg-white hover:bg-slate-50 border border-slate-200 rounded-2xl p-3 flex items-center justify-between shadow-xs cursor-pointer transition-all select-none"
       >
         <div className="flex items-center gap-3 min-w-0 flex-1">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#8b5cf6]/30 to-[#f43f5e]/30 border border-purple-400/30 flex items-center justify-center flex-shrink-0 shadow-xs">
-            <Bell className="w-4.5 h-4.5 text-pink-300" />
+          <div className="w-9 h-9 rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 shadow-xs">
+            <Bell className="w-4.5 h-4.5 text-rose-500" />
           </div>
-          <p className="text-[13px] sm:text-[13.5px] font-semibold text-white leading-snug pr-1">
+          <p className="text-[13px] sm:text-[13.5px] font-semibold text-slate-800 leading-snug pr-1">
             Recevez une notification en cas de Match ou message
           </p>
         </div>
-        <div className="flex items-center gap-1.5 flex-shrink-0 text-purple-300/60">
+        <div className="flex items-center gap-1.5 flex-shrink-0 text-slate-400">
           <ChevronRight className="w-4.5 h-4.5" />
         </div>
       </motion.div>
 
       {/* Sub-tabs Navigation */}
-      <nav className="flex border-b border-purple-500/20 px-4 sm:px-5 mt-2 justify-between select-none">
+      <nav className="flex border-b border-slate-200 px-4 sm:px-5 mt-2 justify-between select-none">
         <motion.button 
           whileTap={{ scale: 0.95 }}
           onClick={() => setActiveSubTab('abonnements')}
           className={`pb-2.5 text-[14.5px] sm:text-[15.5px] font-bold transition-colors flex items-center gap-1.5 cursor-pointer relative ${
             activeSubTab === 'abonnements' 
-              ? 'text-white' 
-              : 'text-purple-300/70 hover:text-white font-medium'
+              ? 'text-slate-900' 
+              : 'text-slate-500 hover:text-slate-800 font-medium'
           }`} 
           type="button"
         >
@@ -924,8 +924,8 @@ export function ProfileTab({
             onClick={() => setActiveSubTab('securite')}
             className={`pb-2.5 text-[14.5px] sm:text-[15.5px] transition-colors whitespace-nowrap cursor-pointer relative ${
               activeSubTab === 'securite' 
-                ? 'text-white font-bold' 
-                : 'text-purple-300/70 font-medium hover:text-white'
+                ? 'text-slate-900 font-bold' 
+                : 'text-slate-500 font-medium hover:text-slate-800'
             }`} 
             type="button"
           >
@@ -946,14 +946,14 @@ export function ProfileTab({
               <motion.div 
                 whileTap={{ scale: 0.96 }}
                 onClick={() => setShowActivityMenu(true)}
-                className="bg-[#240c44]/65 hover:bg-[#2d1054]/75 border border-purple-500/20 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition-all backdrop-blur-md shadow-md"
+                className="bg-white hover:bg-slate-50 border border-slate-200 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition-all shadow-xs"
               >
-                <div className="w-10 h-10 rounded-full bg-purple-900/40 flex items-center justify-center flex-shrink-0 border border-purple-400/20 shadow-xs">
-                  <Gauge className="w-5 h-5 text-purple-200" />
+                <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 border border-purple-200 shadow-xs">
+                  <Gauge className="w-5 h-5 text-purple-600" />
                 </div>
                 <div className="flex flex-col min-w-0 text-left">
-                  <span className="text-[11px] sm:text-[11.5px] font-medium text-purple-300/80 truncate">Votre activité</span>
-                  <span className="text-[13.5px] sm:text-[14.5px] font-bold text-white truncate">Très basse</span>
+                  <span className="text-[11px] sm:text-[11.5px] font-medium text-slate-500 truncate">Votre activité</span>
+                  <span className="text-[13.5px] sm:text-[14.5px] font-bold text-slate-900 truncate">Très basse</span>
                 </div>
               </motion.div>
 
@@ -961,14 +961,14 @@ export function ProfileTab({
               <motion.div 
                 whileTap={{ scale: 0.96 }}
                 onClick={() => setShowRechargeCredits(true)}
-                className="bg-[#240c44]/65 hover:bg-[#2d1054]/75 border border-purple-500/20 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition-all backdrop-blur-md shadow-md"
+                className="bg-white hover:bg-slate-50 border border-slate-200 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition-all shadow-xs"
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#2dd4bf]/20 to-[#f43f5e]/20 flex items-center justify-center flex-shrink-0 border border-pink-400/30 shadow-xs">
-                  <Plus className="w-5 h-5 text-pink-300 stroke-[2.5]" />
+                <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center flex-shrink-0 border border-rose-200 shadow-xs">
+                  <Plus className="w-5 h-5 text-rose-500 stroke-[2.5]" />
                 </div>
                 <div className="flex flex-col min-w-0 text-left">
-                  <span className="text-[11px] sm:text-[11.5px] font-medium text-purple-300/80 truncate">Crédits</span>
-                  <span className="text-[13.5px] sm:text-[14.5px] font-bold text-pink-300 truncate">
+                  <span className="text-[11px] sm:text-[11.5px] font-medium text-slate-500 truncate">Crédits</span>
+                  <span className="text-[13.5px] sm:text-[14.5px] font-bold text-rose-600 truncate">
                     {creditsBalance > 0 ? creditsBalance : 'Ajouter'}
                   </span>
                 </div>

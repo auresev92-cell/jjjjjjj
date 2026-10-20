@@ -271,10 +271,10 @@ export function LikesTab({
   };
 
   return (
-    <div className="w-full min-h-full bg-gradient-to-b from-[#160829] via-[#0d041a] to-[#080211] text-white flex flex-col pb-32 relative select-none antialiased">
+    <div className="w-full min-h-full bg-[#f8fafc] text-slate-900 flex flex-col pb-32 relative select-none antialiased">
       {/* Ambient glowing backgrounds */}
-      <div aria-hidden="true" className="absolute -top-32 -left-32 w-80 h-80 bg-[#7928ca]/20 rounded-full blur-[90px] pointer-events-none"></div>
-      <div aria-hidden="true" className="absolute top-1/3 -right-28 w-72 h-72 bg-[#ff007a]/15 rounded-full blur-[100px] pointer-events-none"></div>
+      <div aria-hidden="true" className="absolute -top-32 -left-32 w-80 h-80 bg-purple-100/40 rounded-full blur-[90px] pointer-events-none"></div>
+      <div aria-hidden="true" className="absolute top-1/3 -right-28 w-72 h-72 bg-rose-100/30 rounded-full blur-[100px] pointer-events-none"></div>
 
       {/* 1-Day Premium Unlock Modal */}
       {showOneDayPremium && (
@@ -430,10 +430,10 @@ export function LikesTab({
 
       {/* Header section with mobile-optimized typography */}
       <section className="px-5 pt-3 pb-2 space-y-1" data-purpose="header-section">
-        <h1 className="text-[20px] sm:text-[22px] leading-tight font-extrabold tracking-tight text-white drop-shadow-sm">
+        <h1 className="text-[20px] sm:text-[22px] leading-tight font-extrabold tracking-tight text-slate-900">
           Voici vos Likes
         </h1>
-        <p className="text-[12px] sm:text-[13px] leading-snug text-[#a39cb5] font-medium pr-1">
+        <p className="text-[12px] sm:text-[13px] leading-snug text-slate-500 font-medium pr-1">
           Plus vite vous renvoyez un Like, plus grandes sont vos chances de discuter et de vous rencontrer !
         </p>
       </section>
@@ -443,7 +443,7 @@ export function LikesTab({
         <button
           type="button"
           onClick={() => setShowPremiumModal(true)}
-          className="w-full bg-gradient-to-r from-[#ff3366] via-rose-500 to-[#9d4edd] hover:opacity-95 active:scale-[0.98] text-white font-extrabold py-2.5 sm:py-3 rounded-full text-[13.5px] sm:text-[14.5px] transition-all cursor-pointer shadow-glow-pink flex items-center justify-center space-x-2 border border-white/20"
+          className="w-full bg-gradient-to-r from-[#ff3366] via-rose-500 to-[#9d4edd] hover:opacity-95 active:scale-[0.98] text-white font-extrabold py-2.5 sm:py-3 rounded-full text-[13.5px] sm:text-[14.5px] transition-all cursor-pointer shadow-md flex items-center justify-center space-x-2 border border-white/20"
         >
           <Sparkles className="w-4 h-4 text-amber-300 animate-spin" style={{ animationDuration: '6s' }} />
           <span>Voir mes Likes ({receivedLikesProfiles.length})</span>
@@ -451,11 +451,11 @@ export function LikesTab({
       </div>
 
       {/* Sub-Tabs: Tous les Likes | Nouveaux Likes */}
-      <div className="flex border-b border-white/10 px-5 mb-4 space-x-8">
+      <div className="flex border-b border-slate-200 px-5 mb-4 space-x-8">
         <button
           onClick={() => setLikesSubTab('all')}
           className={`pb-2.5 text-[13.5px] sm:text-[14.5px] font-bold relative cursor-pointer flex items-center space-x-1.5 transition-colors ${
-            likesSubTab === 'all' ? 'text-white' : 'text-[#a39cb5] hover:text-white'
+            likesSubTab === 'all' ? 'text-slate-900' : 'text-slate-500 hover:text-slate-800'
           }`}
         >
           <span>Tous les Likes</span>

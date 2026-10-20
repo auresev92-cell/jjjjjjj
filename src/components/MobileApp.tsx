@@ -1710,7 +1710,7 @@ function BottomNav({
   ];
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-2xl border-t border-slate-200/90 pt-1.5 pb-[max(0.6rem,env(safe-area-inset-bottom))] shadow-[0_-4px_25px_rgba(15,23,42,0.06)] select-none">
+    <div className="absolute bottom-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-2xl border-t border-slate-200/90 pt-1.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_25px_rgba(15,23,42,0.06)] select-none">
       {/* 5 Pods BottomNav */}
       <nav className="flex items-center justify-around px-1 sm:px-2">
         {tabs.map((tab) => {

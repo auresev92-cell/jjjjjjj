@@ -98,7 +98,7 @@ function AppContent() {
               <div
                 className={`relative flex-1 w-full h-full overflow-hidden flex flex-col z-10 ${
                   simulationMode
-                    ? 'sm:pt-11 sm:pb-2 pt-[env(safe-area-inset-top,0px)]'
+                    ? 'sm:pt-11 sm:pb-0 pt-[env(safe-area-inset-top,0px)]'
                     : 'pt-[env(safe-area-inset-top,0px)]'
                 }`}
               >

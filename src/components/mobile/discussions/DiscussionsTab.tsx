@@ -631,7 +631,7 @@ export function DiscussionsTab({
   }, []);
 
   return (
-    <div className="pt-2 px-3.5 h-full flex flex-col bg-gradient-to-b from-[#16042c] via-[#1f093a] to-[#0d021a] text-white relative pb-8 select-none">
+    <div className="pt-2 px-3.5 h-full flex flex-col bg-[#f8fafc] text-slate-900 relative pb-8 select-none">
       {/* Toast Alert */}
       <AnimatePresence>
         {toastMessage && (
@@ -849,7 +849,7 @@ export function DiscussionsTab({
       {/* Header Bar */}
       <div className="flex justify-between items-center mb-3 shrink-0 pt-1">
         <div className="flex items-center space-x-2">
-          <h1 className="text-[20px] sm:text-[22px] font-extrabold text-white tracking-tight">Discussions</h1>
+          <h1 className="text-[20px] sm:text-[22px] font-extrabold text-slate-900 tracking-tight">Discussions</h1>
           {totalUnreadCount > 0 && (
             <span className="bg-gradient-to-r from-[#2dd4bf] to-[#f43f5e] text-white font-black text-[10px] min-w-[18px] h-[18px] px-1 rounded-full flex items-center justify-center shadow-sm">
               {totalUnreadCount > 99 ? '99+' : totalUnreadCount}
@@ -859,7 +859,7 @@ export function DiscussionsTab({
         <div className="flex items-center space-x-2">
           {/* Booster Icon */}
           <button 
-            className="w-8.5 h-8.5 rounded-full bg-[#240c44]/70 border border-purple-500/25 cursor-pointer hover:bg-[#32115c]/80 transition-colors flex items-center justify-center text-white" 
+            className="w-8.5 h-8.5 rounded-full bg-slate-100 border border-slate-200 cursor-pointer hover:bg-slate-200 transition-colors flex items-center justify-center text-slate-700 shadow-xs" 
             onClick={() => setShowActivityMenu(true)}
             title="Votre activité"
             aria-label="Votre activité"
@@ -873,30 +873,30 @@ export function DiscussionsTab({
           {/* Notification Bell */}
           <button 
             onClick={() => setShowNotifications(true)} 
-            className="w-8.5 h-8.5 rounded-full bg-[#240c44]/70 border border-purple-500/25 relative cursor-pointer hover:bg-[#32115c]/80 transition-colors flex items-center justify-center text-white"
+            className="w-8.5 h-8.5 rounded-full bg-slate-100 border border-slate-200 relative cursor-pointer hover:bg-slate-200 transition-colors flex items-center justify-center text-slate-700 shadow-xs"
             title="Notifications"
             aria-label="Notifications"
           >
-            <Bell className="w-[17px] h-[17px] text-purple-200 fill-purple-200" strokeWidth={1.2} />
+            <Bell className="w-[17px] h-[17px] text-slate-600 fill-slate-500" strokeWidth={1.2} />
             {notificationsUnreadCount > 0 && (
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#f43f5e] rounded-full border border-purple-900 shadow-xs" />
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#f43f5e] rounded-full border border-white shadow-xs" />
             )}
           </button>
 
           {/* Search Icon */}
           <button 
             onClick={() => setShowSearch(true)} 
-            className="w-8.5 h-8.5 rounded-full bg-[#240c44]/70 border border-purple-500/25 cursor-pointer hover:bg-[#32115c]/80 transition-colors flex items-center justify-center text-white"
+            className="w-8.5 h-8.5 rounded-full bg-slate-100 border border-slate-200 cursor-pointer hover:bg-slate-200 transition-colors flex items-center justify-center text-slate-700 shadow-xs"
             aria-label="Rechercher"
           >
-            <Search className="w-[17px] h-[17px] text-purple-200" strokeWidth={2.2} />
+            <Search className="w-[17px] h-[17px] text-slate-600" strokeWidth={2.2} />
           </button>
         </div>
       </div>
 
       {/* Top Carousel: Likes et Matchs */}
       <div className="mb-3.5 shrink-0">
-        <h3 className="text-[13px] font-bold text-white mb-2 tracking-tight">Likes et Matchs</h3>
+        <h3 className="text-[13px] font-bold text-slate-900 mb-2 tracking-tight">Likes et Matchs</h3>
         <div className="flex space-x-3 overflow-x-auto pb-1 scrollbar-hide">
           {/* First slot: Likes received button */}
           <button 
